@@ -2,19 +2,191 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyGen Wiki</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyGen Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <main>
-        <img src="SkyGen_logo.png" alt="logo of SkyGen"><img src="houndv2.png" alt="image of a hound">
-        <h1>Welcome to the official <b>SkyGen</b> Wiki Archive</h1>
-    </main>
-    <nav>
-        <a href="about.html">about</a> // <a href="socials.html">socials</a>
-    </nav>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <img src="SkyGen_logo.png" alt="SkyGen logo" />
+        <div class="brand-name">SkyGen Wiki</div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="socials.html">Socials</a>
+      </nav>
+      <div class="search">
+        <span class="icon">🔍</span>
+        <input id="search-input" aria-label="Search" type="search" placeholder="Search the wiki" autocomplete="off" />
+        <div class="search-results" id="search-results" role="listbox"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Quick links</h3>
+        <div class="links">
+          <a href="about.html" data-search="About the project" data-url="about.html" data-excerpt="Learn how SkyGen began and who built it." class="searchable">📜 About the project</a>
+          <a href="socials.html" data-search="Community socials" data-url="socials.html" data-excerpt="Discord, YouTube, and ways to connect." class="searchable">💬 Join the community</a>
+          <a href="#history" data-search="History highlights" data-url="#history" data-excerpt="Milestones from launch to today." class="searchable">🕰️ History highlights</a>
+          <a href="#get-started" data-search="Getting started" data-url="#get-started" data-excerpt="Beginner-friendly overview and tips." class="searchable">🚀 Getting started</a>
+        </div>
+      </aside>
+
+      <main class="content-card">
+        <section class="hero">
+          <div class="badges">
+            <span class="badge">Minecraft SkyGen</span>
+            <span class="badge">Community Archive</span>
+            <span class="badge">Bedrock Edition</span>
+          </div>
+          <h1>Welcome to the official <strong>SkyGen</strong> Wiki Archive</h1>
+          <p>
+            Discover lore, updates, and community knowledge from one of the most beloved SkyGen experiences on
+            Minecraft Bedrock. Start with the quick links or dive into the history and timelines curated by the
+            community.
+          </p>
+          <div class="cta-row" id="get-started">
+            <a class="button primary" href="about.html">Learn the story</a>
+            <a class="button" href="socials.html">Join the community</a>
+          </div>
+        </section>
+
+        <div class="logo-panel">
+          <img src="SkyGen_logo.png" alt="SkyGen logo" />
+          <div>
+            <div class="section-title">SkyGen at a glance</div>
+            <p class="muted">A tycoon-style, island-based SkyGen server with unique generators, PvP risk, and a dedicated
+              Bedrock player base. Explore the docs below.</p>
+          </div>
+        </div>
+
+        <section style="margin-top: 18px;">
+          <h2 class="section-title">Featured sections</h2>
+          <div class="grid">
+            <div class="card searchable" data-search="Origins" data-url="about.html#origins" data-excerpt="How SkyGen launched in 2021 and sparked the generator craze.">
+              <h3>Origins</h3>
+              <p>Learn how SkyGen launched in 2021, the early Discord community, and the spark that made generators a
+                sensation.</p>
+              <a class="button" href="about.html#origins">Read more →</a>
+            </div>
+            <div class="card searchable" data-search="Community" data-url="socials.html" data-excerpt="Discord, YouTube, and ways to meet veteran SkyGen players.">
+              <h3>Community</h3>
+              <p>Find the official Discord and YouTube presence, catch updates, and connect with veteran players.</p>
+              <a class="button" href="socials.html">Go to socials →</a>
+            </div>
+            <div class="card searchable" data-search="Gameplay pillars" data-url="#gameplay" data-excerpt="Generators, floating islands, PvP risk, and progression systems.">
+              <h3 id="gameplay">Gameplay pillars</h3>
+              <p>Generators, floating islands, PvP risk, and progression systems—what makes SkyGen unlike any other
+                Bedrock server.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="history" style="margin-top: 18px;">
+          <h2 class="section-title">History highlights</h2>
+          <div class="timeline">
+            <div class="timeline-item searchable" data-search="June 2021 milestone" data-url="#history" data-excerpt="Public Discord opens and SkyGen takes flight."><strong>June 2021</strong> — Public Discord opens and SkyGen takes flight.
+            </div>
+            <div class="timeline-item searchable" data-search="July 2021 release" data-url="#history" data-excerpt="Official server release and rapid feature growth."><strong>July 2021</strong> — Official server release and rapid feature growth.</div>
+            <div class="timeline-item searchable" data-search="2022 hiatus" data-url="#history" data-excerpt="Founder's hiatus, community maintains momentum."><strong>2022</strong> — Founder's hiatus, community maintains momentum.</div>
+            <div class="timeline-item searchable" data-search="July 2023 update" data-url="#history" data-excerpt="Aribishere steps back to focus on new projects."><strong>July 2023</strong> — Aribishere steps back to focus on new projects.</div>
+            <div class="timeline-item searchable" data-search="August 2023 adaptation" data-url="#history" data-excerpt="Game adaptation announced for veteran players."><strong>August 2023</strong> — Game adaptation announced for veteran players.</div>
+          </div>
+        </section>
+
+        <section style="margin-top: 18px;">
+          <h2 class="section-title">Need somewhere to start?</h2>
+          <div class="info-list">
+            <div class="info-item searchable" data-search="Browse the archive" data-url="#get-started" data-excerpt="Use the sidebar to navigate core topics or jump to About for the full story.">
+              <div class="icon">📚</div>
+              <div>
+                <strong>Browse the archive</strong>
+                <p>Use the sidebar to navigate core topics, or jump straight to the About page for the full story.</p>
+              </div>
+            </div>
+            <div class="info-item searchable" data-search="Connect with the community" data-url="socials.html" data-excerpt="Discord and YouTube links for strategy chats and updates.">
+              <div class="icon">🛰️</div>
+              <div>
+                <strong>Connect with the community</strong>
+                <p>Hop into Discord to share strategies, or catch up on recent videos via YouTube.</p>
+              </div>
+            </div>
+            <div class="info-item searchable" data-search="Help curate" data-url="socials.html#contribute" data-excerpt="Reach out on Discord to help shape the knowledge base.">
+              <div class="icon">🛠️</div>
+              <div>
+                <strong>Help curate</strong>
+                <p>Suggestions for this wiki? Reach out on Discord and help shape the knowledge base.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>Crafted by the SkyGen community • Updated regularly.</div>
+          <div><a href="about.html">About</a> • <a href="socials.html">Community links</a></div>
+        </footer>
+      </main>
+    </div>
+  </div>
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const searchables = Array.from(document.querySelectorAll('.searchable'));
+
+    const results = searchables.map((item) => ({
+      title: item.dataset.search || item.textContent.trim(),
+      url: item.dataset.url || item.getAttribute('href') || '#',
+      excerpt: item.dataset.excerpt || item.textContent.trim()
+    }));
+
+    function renderResults(query) {
+      searchResults.innerHTML = '';
+      if (!query) {
+        searchResults.classList.remove('active');
+        return;
+      }
+      const lower = query.toLowerCase();
+      const matched = results.filter((item) =>
+        item.title.toLowerCase().includes(lower) || item.excerpt.toLowerCase().includes(lower)
+      ).slice(0, 6);
+
+      if (!matched.length) {
+        searchResults.innerHTML = '<div class="search-result">No entries yet. Try a simpler term.</div>';
+        searchResults.classList.add('active');
+        return;
+      }
+
+      matched.forEach((item) => {
+        const div = document.createElement('a');
+        div.className = 'search-result';
+        div.href = item.url;
+        div.innerHTML = `<strong>${item.title}</strong><div class="muted">${item.excerpt}</div>`;
+        searchResults.appendChild(div);
+      });
+      searchResults.classList.add('active');
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      renderResults(e.target.value);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchResults.contains(e.target) && e.target !== searchInput) {
+        searchResults.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
