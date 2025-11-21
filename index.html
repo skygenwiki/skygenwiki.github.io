@@ -7,7 +7,8 @@
   <title>SkyGen Wiki</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -25,8 +26,7 @@
       </nav>
       <div class="search">
         <span class="icon">🔍</span>
-        <input id="search-input" aria-label="Search" type="search" placeholder="Search the wiki" autocomplete="off" />
-        <div class="search-results" id="search-results" role="listbox"></div>
+        <input aria-label="Search" type="search" placeholder="Search the archive (soon)" />
       </div>
     </div>
   </header>
@@ -36,10 +36,10 @@
       <aside class="sidebar">
         <h3>Quick links</h3>
         <div class="links">
-          <a href="about.html" data-search="About the project" data-url="about.html" data-excerpt="Learn how SkyGen began and who built it." class="searchable">📜 About the project</a>
-          <a href="socials.html" data-search="Community socials" data-url="socials.html" data-excerpt="Discord, YouTube, and ways to connect." class="searchable">💬 Join the community</a>
-          <a href="#history" data-search="History highlights" data-url="#history" data-excerpt="Milestones from launch to today." class="searchable">🕰️ History highlights</a>
-          <a href="#get-started" data-search="Getting started" data-url="#get-started" data-excerpt="Beginner-friendly overview and tips." class="searchable">🚀 Getting started</a>
+          <a href="about.html">📜 About the project</a>
+          <a href="socials.html">💬 Join the community</a>
+          <a href="#history">🕰️ History highlights</a>
+          <a href="#get-started">🚀 Getting started</a>
         </div>
       </aside>
 
@@ -74,19 +74,19 @@
         <section style="margin-top: 18px;">
           <h2 class="section-title">Featured sections</h2>
           <div class="grid">
-            <div class="card searchable" data-search="Origins" data-url="about.html#origins" data-excerpt="How SkyGen launched in 2021 and sparked the generator craze.">
+            <div class="card">
               <h3>Origins</h3>
               <p>Learn how SkyGen launched in 2021, the early Discord community, and the spark that made generators a
                 sensation.</p>
-              <a class="button" href="about.html#origins">Read more →</a>
+              <a class="button" href="about.html">Read more →</a>
             </div>
-            <div class="card searchable" data-search="Community" data-url="socials.html" data-excerpt="Discord, YouTube, and ways to meet veteran SkyGen players.">
+            <div class="card">
               <h3>Community</h3>
               <p>Find the official Discord and YouTube presence, catch updates, and connect with veteran players.</p>
               <a class="button" href="socials.html">Go to socials →</a>
             </div>
-            <div class="card searchable" data-search="Gameplay pillars" data-url="#gameplay" data-excerpt="Generators, floating islands, PvP risk, and progression systems.">
-              <h3 id="gameplay">Gameplay pillars</h3>
+            <div class="card">
+              <h3>Gameplay pillars</h3>
               <p>Generators, floating islands, PvP risk, and progression systems—what makes SkyGen unlike any other
                 Bedrock server.</p>
             </div>
@@ -96,33 +96,33 @@
         <section id="history" style="margin-top: 18px;">
           <h2 class="section-title">History highlights</h2>
           <div class="timeline">
-            <div class="timeline-item searchable" data-search="June 2021 milestone" data-url="#history" data-excerpt="Public Discord opens and SkyGen takes flight."><strong>June 2021</strong> — Public Discord opens and SkyGen takes flight.
+            <div class="timeline-item"><strong>June 2021</strong> — Public Discord opens and SkyGen takes flight.
             </div>
-            <div class="timeline-item searchable" data-search="July 2021 release" data-url="#history" data-excerpt="Official server release and rapid feature growth."><strong>July 2021</strong> — Official server release and rapid feature growth.</div>
-            <div class="timeline-item searchable" data-search="2022 hiatus" data-url="#history" data-excerpt="Founder's hiatus, community maintains momentum."><strong>2022</strong> — Founder's hiatus, community maintains momentum.</div>
-            <div class="timeline-item searchable" data-search="July 2023 update" data-url="#history" data-excerpt="Aribishere steps back to focus on new projects."><strong>July 2023</strong> — Aribishere steps back to focus on new projects.</div>
-            <div class="timeline-item searchable" data-search="August 2023 adaptation" data-url="#history" data-excerpt="Game adaptation announced for veteran players."><strong>August 2023</strong> — Game adaptation announced for veteran players.</div>
+            <div class="timeline-item"><strong>July 2021</strong> — Official server release and rapid feature growth.</div>
+            <div class="timeline-item"><strong>2022</strong> — Founder's hiatus, community maintains momentum.</div>
+            <div class="timeline-item"><strong>July 2023</strong> — Aribishere steps back to focus on new projects.</div>
+            <div class="timeline-item"><strong>August 2023</strong> — Game adaptation announced for veteran players.</div>
           </div>
         </section>
 
         <section style="margin-top: 18px;">
           <h2 class="section-title">Need somewhere to start?</h2>
           <div class="info-list">
-            <div class="info-item searchable" data-search="Browse the archive" data-url="#get-started" data-excerpt="Use the sidebar to navigate core topics or jump to About for the full story.">
+            <div class="info-item">
               <div class="icon">📚</div>
               <div>
                 <strong>Browse the archive</strong>
                 <p>Use the sidebar to navigate core topics, or jump straight to the About page for the full story.</p>
               </div>
             </div>
-            <div class="info-item searchable" data-search="Connect with the community" data-url="socials.html" data-excerpt="Discord and YouTube links for strategy chats and updates.">
+            <div class="info-item">
               <div class="icon">🛰️</div>
               <div>
                 <strong>Connect with the community</strong>
                 <p>Hop into Discord to share strategies, or catch up on recent videos via YouTube.</p>
               </div>
             </div>
-            <div class="info-item searchable" data-search="Help curate" data-url="socials.html#contribute" data-excerpt="Reach out on Discord to help shape the knowledge base.">
+            <div class="info-item">
               <div class="icon">🛠️</div>
               <div>
                 <strong>Help curate</strong>
@@ -139,54 +139,6 @@
       </main>
     </div>
   </div>
-  <script>
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const searchables = Array.from(document.querySelectorAll('.searchable'));
-
-    const results = searchables.map((item) => ({
-      title: item.dataset.search || item.textContent.trim(),
-      url: item.dataset.url || item.getAttribute('href') || '#',
-      excerpt: item.dataset.excerpt || item.textContent.trim()
-    }));
-
-    function renderResults(query) {
-      searchResults.innerHTML = '';
-      if (!query) {
-        searchResults.classList.remove('active');
-        return;
-      }
-      const lower = query.toLowerCase();
-      const matched = results.filter((item) =>
-        item.title.toLowerCase().includes(lower) || item.excerpt.toLowerCase().includes(lower)
-      ).slice(0, 6);
-
-      if (!matched.length) {
-        searchResults.innerHTML = '<div class="search-result">No entries yet. Try a simpler term.</div>';
-        searchResults.classList.add('active');
-        return;
-      }
-
-      matched.forEach((item) => {
-        const div = document.createElement('a');
-        div.className = 'search-result';
-        div.href = item.url;
-        div.innerHTML = `<strong>${item.title}</strong><div class="muted">${item.excerpt}</div>`;
-        searchResults.appendChild(div);
-      });
-      searchResults.classList.add('active');
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      renderResults(e.target.value);
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!searchResults.contains(e.target) && e.target !== searchInput) {
-        searchResults.classList.remove('active');
-      }
-    });
-  </script>
 </body>
 
 </html>

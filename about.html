@@ -7,7 +7,8 @@
   <title>SkyGen Wiki | About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -25,8 +26,7 @@
       </nav>
       <div class="search">
         <span class="icon">🔍</span>
-        <input id="search-input" aria-label="Search" type="search" placeholder="Search the wiki" autocomplete="off" />
-        <div class="search-results" id="search-results" role="listbox"></div>
+        <input aria-label="Search" type="search" placeholder="Search the archive (soon)" />
       </div>
     </div>
   </header>
@@ -36,10 +36,10 @@
       <aside class="sidebar">
         <h3>Contents</h3>
         <div class="links">
-          <a class="searchable" href="#overview" data-search="Overview" data-url="#overview" data-excerpt="What SkyGen is and why it matters">📌 Overview</a>
-          <a class="searchable" href="#timeline" data-search="Timeline" data-url="#timeline" data-excerpt="Milestones that defined SkyGen">🕰️ Timeline</a>
-          <a class="searchable" href="#vision" data-search="Vision" data-url="#vision" data-excerpt="What the wiki covers">🎯 Vision</a>
-          <a class="searchable" href="socials.html" data-search="Join the community" data-url="socials.html" data-excerpt="Links to Discord and other platforms">💬 Join the community</a>
+          <a href="#overview">📌 Overview</a>
+          <a href="#timeline">🕰️ Timeline</a>
+          <a href="#vision">🎯 Vision</a>
+          <a href="socials.html">💬 Join the community</a>
         </div>
       </aside>
 
@@ -74,26 +74,26 @@
         <section id="timeline" style="margin-top: 18px;">
           <h2 class="section-title">Key milestones</h2>
           <div class="timeline">
-            <div class="timeline-item searchable" data-search="June 2021 milestone" data-url="#timeline" data-excerpt="SkyGen launches alongside the community Discord."><strong>June 2021</strong> — SkyGen launches alongside the community Discord.</div>
-            <div class="timeline-item searchable" data-search="July 2021 release" data-url="#timeline" data-excerpt="Full server release brings rapid growth and new systems."><strong>July 2021</strong> — Full server release brings rapid growth and new systems.</div>
-            <div class="timeline-item searchable" data-search="2022 hiatus" data-url="#timeline" data-excerpt="Creator hiatus with occasional returns to guide updates."><strong>2022</strong> — Creator hiatus with occasional returns to guide updates.</div>
-            <div class="timeline-item searchable" data-search="July 2023 retirement" data-url="#timeline" data-excerpt="Aribishere retires from SkyGen to focus on future work."><strong>July 2023</strong> — Aribishere retires from SkyGen to focus on future work.</div>
-            <div class="timeline-item searchable" data-search="August 2023 adaptation" data-url="#timeline" data-excerpt="Game adaptation for veterans enters semi-active development."><strong>August 2023</strong> — Game adaptation for veterans enters semi-active development.</div>
+            <div class="timeline-item"><strong>June 2021</strong> — SkyGen launches alongside the community Discord.</div>
+            <div class="timeline-item"><strong>July 2021</strong> — Full server release brings rapid growth and new systems.</div>
+            <div class="timeline-item"><strong>2022</strong> — Creator hiatus with occasional returns to guide updates.</div>
+            <div class="timeline-item"><strong>July 2023</strong> — Aribishere retires from SkyGen to focus on future work.</div>
+            <div class="timeline-item"><strong>August 2023</strong> — Game adaptation for veterans enters semi-active development.</div>
           </div>
         </section>
 
         <section id="vision" style="margin-top: 18px;">
           <h2 class="section-title">What the wiki covers</h2>
           <div class="grid">
-            <div class="card searchable" data-search="Server history" data-url="#vision" data-excerpt="Major updates, seasonal changes, and community milestones">
+            <div class="card">
               <h3>Server history</h3>
               <p>Major updates, seasonal changes, and the community milestones that shaped SkyGen.</p>
             </div>
-            <div class="card searchable" data-search="Progression tips" data-url="#vision" data-excerpt="Generator tips, economy flow, and island growth strategies">
+            <div class="card">
               <h3>Progression tips</h3>
               <p>Guides on generators, economy flow, and strategies to maximize your island growth.</p>
             </div>
-            <div class="card searchable" data-search="Community knowledge" data-url="#vision" data-excerpt="Player-made guides, lore snippets, and memorable moments">
+            <div class="card">
               <h3>Community knowledge</h3>
               <p>Player-made guides, lore snippets, and memorable moments curated by veteran members.</p>
             </div>
@@ -103,14 +103,14 @@
         <section style="margin-top: 18px;">
           <h2 class="section-title">Looking forward</h2>
           <div class="info-list">
-            <div class="info-item searchable" data-search="Upcoming game adaptation" data-url="#vision" data-excerpt="Semi-active development with perks for veterans">
+            <div class="info-item">
               <div class="icon">🚀</div>
               <div>
                 <strong>Upcoming game adaptation</strong>
                 <p>Development is semi-active, but veteran players will receive discounts and recognition.</p>
               </div>
             </div>
-            <div class="info-item searchable" data-search="Community contributions" data-url="socials.html" data-excerpt="Connect through Discord to add facts and stories">
+            <div class="info-item">
               <div class="icon">🤝</div>
               <div>
                 <strong>Community contributions</strong>
@@ -127,54 +127,6 @@
       </main>
     </div>
   </div>
-  <script>
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const searchables = Array.from(document.querySelectorAll('.searchable'));
-
-    const results = searchables.map((item) => ({
-      title: item.dataset.search || item.textContent.trim(),
-      url: item.dataset.url || item.getAttribute('href') || '#',
-      excerpt: item.dataset.excerpt || item.textContent.trim()
-    }));
-
-    function renderResults(query) {
-      searchResults.innerHTML = '';
-      if (!query) {
-        searchResults.classList.remove('active');
-        return;
-      }
-      const lower = query.toLowerCase();
-      const matched = results.filter((item) =>
-        item.title.toLowerCase().includes(lower) || item.excerpt.toLowerCase().includes(lower)
-      ).slice(0, 6);
-
-      if (!matched.length) {
-        searchResults.innerHTML = '<div class="search-result">No entries yet. Try a simpler term.</div>';
-        searchResults.classList.add('active');
-        return;
-      }
-
-      matched.forEach((item) => {
-        const div = document.createElement('a');
-        div.className = 'search-result';
-        div.href = item.url;
-        div.innerHTML = `<strong>${item.title}</strong><div class="muted">${item.excerpt}</div>`;
-        searchResults.appendChild(div);
-      });
-      searchResults.classList.add('active');
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      renderResults(e.target.value);
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!searchResults.contains(e.target) && e.target !== searchInput) {
-        searchResults.classList.remove('active');
-      }
-    });
-  </script>
 </body>
 
 </html>

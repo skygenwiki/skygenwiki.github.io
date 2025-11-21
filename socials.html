@@ -7,7 +7,8 @@
   <title>SkyGen Wiki | Socials</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -25,8 +26,7 @@
       </nav>
       <div class="search">
         <span class="icon">🔍</span>
-        <input id="search-input" aria-label="Search" type="search" placeholder="Search the wiki" autocomplete="off" />
-        <div class="search-results" id="search-results" role="listbox"></div>
+        <input aria-label="Search" type="search" placeholder="Search the archive (soon)" />
       </div>
     </div>
   </header>
@@ -36,9 +36,9 @@
       <aside class="sidebar">
         <h3>Navigate</h3>
         <div class="links">
-          <a class="searchable" href="#discord" data-search="Discord" data-url="#discord" data-excerpt="Join the SkyGen Discord community">💬 Discord</a>
-          <a class="searchable" href="#youtube" data-search="YouTube" data-url="#youtube" data-excerpt="Watch official SkyGen videos">▶️ YouTube</a>
-          <a class="searchable" href="about.html" data-search="Read the history" data-url="about.html" data-excerpt="Learn about SkyGen's origins">📜 Read the history</a>
+          <a href="#discord">💬 Discord</a>
+          <a href="#youtube">▶️ YouTube</a>
+          <a href="about.html">📜 Read the history</a>
         </div>
       </aside>
 
@@ -58,20 +58,20 @@
         <section id="discord" style="margin-top: 12px;">
           <h2 class="section-title">Discord</h2>
           <div class="social-links">
-            <a class="searchable" href="https://discord.gg/Wz3AhWsWQ7" target="_blank" rel="noopener noreferrer" data-search="Discord invite" data-url="https://discord.gg/Wz3AhWsWQ7" data-excerpt="Join the SkyGen Discord to chat and get support">
+            <a href="https://discord.gg/Wz3AhWsWQ7" target="_blank" rel="noopener noreferrer">
               <span>discord.gg/Wz3AhWsWQ7</span>
               <span>Join →</span>
             </a>
           </div>
           <div class="info-list" style="margin-top: 12px;">
-            <div class="info-item searchable" data-search="Announcements and support" data-url="#discord" data-excerpt="Updates, events, and upcoming SkyGen-inspired game news">
+            <div class="info-item">
               <div class="icon">📢</div>
               <div>
                 <strong>Announcements & support</strong>
                 <p>Get notified about updates, events, and the upcoming SkyGen-inspired game.</p>
               </div>
             </div>
-            <div class="info-item searchable" data-search="Strategy help" data-url="#discord" data-excerpt="Swap generator layouts and island tips with veterans">
+            <div class="info-item">
               <div class="icon">🧭</div>
               <div>
                 <strong>Strategy & help</strong>
@@ -84,20 +84,20 @@
         <section id="youtube" style="margin-top: 18px;">
           <h2 class="section-title">YouTube</h2>
           <div class="social-links">
-            <a class="searchable" href="https://www.youtube.com/@skygenofficial" target="_blank" rel="noopener noreferrer" data-search="YouTube channel" data-url="https://www.youtube.com/@skygenofficial" data-excerpt="Official SkyGen channel for updates and highlights">
+            <a href="https://www.youtube.com/@skygenofficial" target="_blank" rel="noopener noreferrer">
               <span>youtube.com/@skygenofficial</span>
               <span>Watch →</span>
             </a>
           </div>
           <div class="info-list" style="margin-top: 12px;">
-            <div class="info-item searchable" data-search="Updates and highlights" data-url="#youtube" data-excerpt="Community spotlights, announcements, and future devlogs">
+            <div class="info-item">
               <div class="icon">🎥</div>
               <div>
                 <strong>Updates & highlights</strong>
                 <p>Catch community spotlights, announcements, and any future devlogs.</p>
               </div>
             </div>
-            <div class="info-item searchable" data-search="Share your clips" data-url="#youtube" data-excerpt="Submit memorable SkyGen moments in Discord for the channel">
+            <div class="info-item">
               <div class="icon">⭐</div>
               <div>
                 <strong>Share your clips</strong>
@@ -114,54 +114,6 @@
       </main>
     </div>
   </div>
-  <script>
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const searchables = Array.from(document.querySelectorAll('.searchable'));
-
-    const results = searchables.map((item) => ({
-      title: item.dataset.search || item.textContent.trim(),
-      url: item.dataset.url || item.getAttribute('href') || '#',
-      excerpt: item.dataset.excerpt || item.textContent.trim()
-    }));
-
-    function renderResults(query) {
-      searchResults.innerHTML = '';
-      if (!query) {
-        searchResults.classList.remove('active');
-        return;
-      }
-      const lower = query.toLowerCase();
-      const matched = results.filter((item) =>
-        item.title.toLowerCase().includes(lower) || item.excerpt.toLowerCase().includes(lower)
-      ).slice(0, 6);
-
-      if (!matched.length) {
-        searchResults.innerHTML = '<div class="search-result">No entries yet. Try a simpler term.</div>';
-        searchResults.classList.add('active');
-        return;
-      }
-
-      matched.forEach((item) => {
-        const div = document.createElement('a');
-        div.className = 'search-result';
-        div.href = item.url;
-        div.innerHTML = `<strong>${item.title}</strong><div class="muted">${item.excerpt}</div>`;
-        searchResults.appendChild(div);
-      });
-      searchResults.classList.add('active');
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      renderResults(e.target.value);
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!searchResults.contains(e.target) && e.target !== searchInput) {
-        searchResults.classList.remove('active');
-      }
-    });
-  </script>
 </body>
 
 </html>
